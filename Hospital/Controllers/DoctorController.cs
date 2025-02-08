@@ -1,4 +1,5 @@
 ﻿using Hospital.Data;
+using Hospital.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Controllers
@@ -16,6 +17,21 @@ namespace Hospital.Controllers
         {
             var Doc = dbContext.Doctors.Find(id);
             return View(Doc);
+        }
+
+        public IActionResult MakeAppointment(CompleteAppointment completeAppointment)
+        {
+            dbContext.CompleteAppointments.Add(new CompleteAppointment()
+            {
+                PatientName = completeAppointment.PatientName,
+                DoctorId= completeAppointment.DoctorId,
+                AppointmentDate= completeAppointment.AppointmentDate,
+                AppointmentTime= completeAppointment.AppointmentTime,
+
+            } );
+            dbContext.SaveChanges();
+            return RedirectToAction(nameof(BookAppointment));
+       
         }
     }
 

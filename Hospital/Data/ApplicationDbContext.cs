@@ -9,11 +9,12 @@ namespace Hospital.Data
     {
             public DbSet<Doctor> Doctors { get; set; }
             public DbSet<CompleteAppointment> CompleteAppointments { get; set; }
+        public object CompleteAppointment { get; internal set; }
 
-            //public DbSet<Category> Categories { get; set; }
-            //public DbSet<Product> Products { get; set; }
+        //public DbSet<Category> Categories { get; set; }
+        //public DbSet<Product> Products { get; set; }
 
-            protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             {
                 base.OnConfiguring(optionsBuilder);
 
