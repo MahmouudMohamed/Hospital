@@ -1,17 +1,31 @@
-﻿<h1>Book Appointment</h1>
+﻿<h1 class="text-center mb-4 text-primary">Book an Appointment</h1>
 
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img class="card-img" src="~/images/@item.Img" style="width: 100%; height: auto;" alt="Doctor Image">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <p class="card-text">Specialization: @item.Specialization </p>
-                    <a class="btn btn-primary" href="/Doctor/CompleteAppointment/@item.Id">Book Appointment</a>
+<div class="container">
+    <div class="row mb-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="display-6 m-0 text-secondary">Available Doctors</h2>
+            <a href="/Doctor/ShowAllAppointment" class="btn btn-outline-primary d-flex align-items-center">
+                <i class="bi bi-list-check me-2"></i> Show All Completed Appointments
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card shadow-sm border-0 rounded-lg">
+                    <img class="card-img-top rounded-top" src="~/images/@item.Img" alt="Doctor Image" style="height: fit-content; object-fit: fill;">
+
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-primary">@item.Name</h5>
+                        <p class="card-text text-muted">Specialization: <strong>@item.Specialization</strong></p>
+                        <a class="btn btn-success w-100 mt-2" href="/Doctor/CompleteAppointment/@item.Id">
+                            <i class="bi bi-calendar-check"></i> Book Appointment
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>

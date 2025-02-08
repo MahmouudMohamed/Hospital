@@ -2,15 +2,36 @@
     ViewData["Title"] = "Welcome to Our Hospital";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Our Hospital</h1>
-    <p>Thank you for choosing our hospital for your healthcare needs.</p>
-    <p>Here, we strive to provide the highest quality medical care to our patients.</p>
-    <p>Learn more about our services and specialties:</p>
-    <ul class="list-group">
-        <li class="list-group-item">Internal Medicine</li>
-        <li class="list-group-item">Pediatrics</li>
-        <li class="list-group-item">Surgery</li>
-    </ul>
-    <p>If you have any questions or need assistance, please don't hesitate to contact us.</p>
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 text-primary fw-bold">Welcome to Our Hospital</h1>
+        <p class="lead text-muted">Your health is our priority.</p>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body text-center">
+                    <p class="fs-5">Thank you for choosing our hospital for your healthcare needs.</p>
+                    <p class="text-secondary">
+                        We strive to provide the highest quality medical care to our patients.
+                    </p>
+                    <hr>
+                    <h3 class="text-primary mt-3">Our Specialties</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-heart-pulse text-danger me-2"></i> Internal Medicine
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-bandaid text-warning me-2"></i> Pediatrics
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="bi bi-hospital text-success me-2"></i> Surgery
+                        </li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

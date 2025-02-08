@@ -1,6 +1,7 @@
 ﻿using Hospital.Data;
 using Hospital.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Hospital.Controllers
 {
@@ -30,8 +31,14 @@ namespace Hospital.Controllers
 
             } );
             dbContext.SaveChanges();
-            return RedirectToAction(nameof(BookAppointment));
+            return RedirectToAction("BookAppointment");
        
+        }
+        public IActionResult ShowAllAppointment()
+        {
+            var all = dbContext.CompleteAppointments.Include(e=>e.Doctor).Where(e=>e.DoctorId==e.Doctor.Id);
+
+            return View(all);
         }
     }
 
