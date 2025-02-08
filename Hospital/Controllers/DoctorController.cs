@@ -33,6 +33,8 @@ namespace Hospital.Controllers
             dbContext.SaveChanges();
             return RedirectToAction("BookAppointment");
        
+
+
         }
         public IActionResult ShowAllAppointment()
         {
